@@ -9,9 +9,6 @@ const client = new Client({
   ],
 });
 
-// -------------------
-// In-memory message store
-// -------------------
 const messageStore = [];
 
 function storeMessage(msg) {
@@ -31,9 +28,6 @@ function searchMessages(word, limit) {
   );
 }
 
-// -------------------
-// Slash command setup
-// -------------------
 const commands = [
   new SlashCommandBuilder()
     .setName("findmessage")
@@ -60,9 +54,6 @@ const rest = new REST({ version: "10" }).setToken(process.env.BOT_TOKEN);
   }
 })();
 
-// -------------------
-// Bot Events
-// -------------------
 client.once("ready", () => {
   console.log(`🤖 Logged in as ${client.user.tag}`);
 });
